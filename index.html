@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saman Market | Useful things for island homes</title>
+<meta name="description" content="Home, storage and tech essentials delivered across Trinidad and Tobago. Pay by card, online banking or cash on delivery.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+/* Radius rule: surfaces 14px, controls full pill, inputs 10px */
+:root{
+  --bg:#F3F3F1; --surface:#FFFFFF; --surface-2:#EAEAE6; --ink:#141517; --muted:#5D6066; --line:#DCDCD6;
+  --accent:#D9481F; --accent-ink:#FFFFFF; --accent-soft:#FBE4DC;
+  --shadow:0 18px 40px -24px rgba(40,30,20,.28);
+  --r:14px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#121314; --surface:#1A1B1D; --surface-2:#232427; --ink:#EDEDEA; --muted:#A3A5AA; --line:#2E3033;
+  --accent:#F0663E; --accent-ink:#160A05; --accent-soft:#3A1E15; --shadow:0 18px 40px -24px rgba(0,0,0,.7);
+}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Satoshi,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+button,input,select{font:inherit;color:inherit}
+a{color:inherit}
+.wrap{max-width:1320px;margin:0 auto;padding:0 28px}
+@media (max-width:700px){.wrap{padding:0 16px}}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;border-radius:999px;padding:13px 22px;font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap;transition:transform .2s cubic-bezier(.16,1,.3,1),background .2s}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{filter:brightness(1.06)}
+.btn-ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink)}
+.icon-btn{width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer;position:relative;font-size:20px}
+/* nav */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px;letter-spacing:-.02em;text-decoration:none}
+.logo svg{width:30px;height:30px}
+.nav-links{display:flex;gap:24px;font-weight:500;font-size:15px;color:var(--muted)}
+.nav-links a{text-decoration:none}.nav-links a:hover{color:var(--ink)}
+.nav-search{margin-left:auto;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:0 14px;height:44px;width:300px}
+.nav-search input{border:0;background:transparent;outline:0;width:100%;font-size:15px}
+.nav-search input::placeholder{color:var(--muted)}
+.count{position:absolute;top:-4px;right:-4px;background:var(--accent);color:var(--accent-ink);font-size:11px;font-weight:700;min-width:20px;height:20px;border-radius:999px;display:grid;place-items:center;padding:0 5px;transform:scale(0);transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.count.on{transform:scale(1)}
+@media (max-width:900px){.nav-links{display:none}.nav-search{width:auto;flex:1}}
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;padding-block:56px 72px;min-height:calc(100dvh - 68px)}
+.hero h1{font-size:clamp(38px,4.3vw,62px);line-height:1;letter-spacing:-.035em;font-weight:900}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:19px;color:var(--muted);max-width:44ch;margin:22px 0 32px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-art{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:min(620px,72dvh)}
+.hero-art figure{border-radius:var(--r);overflow:hidden;background:var(--surface-2)}
+.hero-art figure img{width:100%;height:100%;object-fit:cover}
+.hero-art .tall{grid-row:span 2}
+.hero-art .tile{background:var(--accent);color:var(--accent-ink);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;justify-content:space-between}
+.hero-art .tile strong{font-size:44px;line-height:1;letter-spacing:-.03em}
+.hero-art .tile span{font-weight:500;font-size:15px;max-width:22ch;margin-top:8px}
+.hero-art .tile strong{margin-top:auto}
+@media (max-width:900px){.hero{grid-template-columns:1fr;min-height:0;padding-block:36px 48px;gap:32px}.hero-art{height:420px}}
+/* pay strip */
+.strip{border-block:1px solid var(--line);background:var(--surface)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+.strip div.item{display:flex;align-items:center;gap:12px;padding:22px 0;font-weight:500}
+.strip i{font-size:26px;color:var(--accent)}
+.strip small{display:block;color:var(--muted);font-weight:400;font-size:13px}
+@media (max-width:900px){.strip .wrap{grid-template-columns:1fr 1fr}}
+/* shop */
+section{padding:96px 0}
+.h2{font-size:clamp(32px,3.6vw,52px);letter-spacing:-.03em;line-height:1.05;font-weight:900}
+.sub{color:var(--muted);font-size:17px;max-width:60ch;margin-top:12px}
+.shop-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:36px 0 28px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:9px 16px;font-weight:500;font-size:14px;cursor:pointer;transition:all .2s}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.shop-bar select{margin-left:auto;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:9px 16px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media (max-width:1100px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.grid{grid-template-columns:1fr 1fr;gap:12px}}
+.card{background:var(--surface);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card .ph{aspect-ratio:1/1;background:var(--surface-2);position:relative;overflow:hidden;cursor:pointer}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.card:hover .ph img{transform:scale(1.04)}
+.card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:16px;font-weight:700;line-height:1.3;cursor:pointer}
+.card .meta{font-size:13px;color:var(--muted)}
+.card .row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:8px}
+.price{font-weight:900;font-size:19px;letter-spacing:-.01em}
+.price s{font-weight:500;color:var(--muted);font-size:14px;margin-left:6px}
+.add{width:40px;height:40px;border-radius:999px;border:0;background:var(--ink);color:var(--bg);cursor:pointer;font-size:19px;display:grid;place-items:center;transition:transform .2s}
+.add:active{transform:scale(.9)}
+.add.done{background:var(--accent);color:var(--accent-ink)}
+.stock{font-size:12px;font-weight:700}
+.stock.low{color:var(--accent)}
+.empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)}
+.empty i{font-size:40px;display:block;margin-bottom:10px}
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(200px,auto);gap:16px;margin-top:40px}
+.b{border-radius:var(--r);padding:28px;background:var(--surface);border:1px solid var(--line);position:relative;overflow:hidden}
+.b h3{font-size:24px;letter-spacing:-.02em;line-height:1.15;font-weight:900}
+.b p{color:var(--muted);margin-top:8px;max-width:40ch}
+.b-pay{grid-column:span 3;background:var(--ink);color:var(--bg);border:0}
+.b-pay p{color:color-mix(in srgb,var(--bg) 70%,transparent)}
+.pay-opts{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.pay-opts div{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;background:color-mix(in srgb,var(--bg) 9%,transparent)}
+.pay-opts i{font-size:22px;color:var(--accent)}
+.b-photo{grid-column:span 3;padding:0;min-height:320px}
+.b-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.b-photo .cap{position:absolute;left:0;right:0;bottom:0;padding:28px;color:#fff;background:linear-gradient(transparent,rgba(10,10,10,.72))}
+.b-photo .cap p{color:rgba(255,255,255,.85)}
+.b-zone{grid-column:span 4}
+.zone-ui{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px;align-items:end}
+.zone-ui label{font-size:13px;font-weight:700;display:block;margin-bottom:6px}
+.zone-ui select{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg)}
+.zone-out{font-size:15px}
+.zone-out strong{font-size:40px;letter-spacing:-.03em;display:block;line-height:1}
+.b-wa{grid-column:span 2;background:var(--accent);color:var(--accent-ink);border:0}
+.b-wa p{color:inherit;opacity:.85}
+.b-wa i{font-size:40px}
+@media (max-width:900px){.bento{grid-template-columns:1fr}.bento>*{grid-column:auto!important}.zone-ui{grid-template-columns:1fr}}
+/* review */
+.review{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;max-width:980px}
+.review img{width:140px;height:140px;border-radius:999px;object-fit:cover}
+.review blockquote{font-size:clamp(24px,2.6vw,34px);letter-spacing:-.02em;line-height:1.25;font-weight:700}
+.review cite{display:block;margin-top:16px;font-style:normal;color:var(--muted);font-size:15px}
+@media (max-width:700px){.review{grid-template-columns:1fr}}
+/* cta */
+.final{background:var(--ink);color:var(--bg);border-radius:var(--r);padding:72px 56px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
+.final p{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:17px;margin-top:12px}
+.final form{display:flex;gap:10px}
+.final input{flex:1;border-radius:999px;border:1px solid color-mix(in srgb,var(--bg) 25%,transparent);background:transparent;padding:13px 18px;color:var(--bg);min-width:0}
+.final input::placeholder{color:color-mix(in srgb,var(--bg) 60%,transparent)}
+.final .note{font-size:14px;margin-top:10px;min-height:20px}
+@media (max-width:900px){.final{grid-template-columns:1fr;padding:44px 24px}}
+footer{padding:48px 0 60px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.demo-tag{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--ink);font-weight:700}
+/* drawer + modal */
+.scrim{position:fixed;inset:0;background:rgba(10,10,10,.45);opacity:0;pointer-events:none;transition:opacity .3s;z-index:40}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--surface);z-index:50;transform:translateX(100%);transition:transform .45s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.drawer-h{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px solid var(--line)}
+.drawer-h h3{font-size:22px;font-weight:900}
+.lines{flex:1;overflow:auto;padding:8px 24px}
+.line{display:grid;grid-template-columns:64px 1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:center}
+.line img{width:64px;height:64px;border-radius:10px;object-fit:cover}
+.line h4{font-size:14px;font-weight:700;line-height:1.3}
+.qty{display:inline-flex;align-items:center;gap:4px;margin-top:6px;border:1px solid var(--line);border-radius:999px}
+.qty button{width:28px;height:28px;border:0;background:none;cursor:pointer;font-size:15px}
+.qty span{min-width:18px;text-align:center;font-size:14px;font-weight:700}
+.drawer-f{padding:20px 24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.sum{display:flex;justify-content:space-between;font-size:15px}
+.sum.total{font-size:20px;font-weight:900}
+.free-bar{font-size:13px;color:var(--muted)}
+.free-bar b{color:var(--accent)}
+.modal{position:fixed;inset:0;display:grid;place-items:center;z-index:60;padding:16px;pointer-events:none}
+.modal .box{background:var(--surface);border-radius:var(--r);width:min(860px,100%);max-height:92dvh;overflow:auto;opacity:0;transform:translateY(20px) scale(.98);transition:all .4s cubic-bezier(.16,1,.3,1)}
+.modal.on{pointer-events:auto}
+.modal.on .box{opacity:1;transform:none}
+.pd{display:grid;grid-template-columns:1fr 1fr}
+.pd img{width:100%;height:100%;object-fit:cover;min-height:360px}
+.pd .in{padding:32px;display:flex;flex-direction:column;gap:14px}
+.pd h3{font-size:26px;line-height:1.15;letter-spacing:-.02em;font-weight:900}
+.pd ul{padding-left:18px;color:var(--muted);font-size:15px;display:grid;gap:4px}
+@media (max-width:700px){.pd{grid-template-columns:1fr}.pd img{min-height:240px;max-height:300px}}
+.close{position:absolute;top:14px;right:14px}
+.co{padding:32px;position:relative}
+.steps{display:flex;gap:8px;margin:6px 0 24px}
+.steps span{flex:1;height:4px;border-radius:4px;background:var(--surface-2)}
+.steps span.on{background:var(--accent)}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.field label{font-size:13px;font-weight:700}
+.field input,.field select{padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);outline:0}
+.field input:focus,.field select:focus{border-color:var(--ink)}
+.field .err{font-size:13px;color:var(--accent);min-height:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:600px){.two{grid-template-columns:1fr}}
+.opt{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1.5px solid var(--line);border-radius:10px;margin-bottom:10px;cursor:pointer}
+.opt:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+.opt input{margin-top:4px;accent-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.co-actions{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+.done-ui{text-align:center;padding:20px 0}
+.done-ui i{font-size:54px;color:var(--accent)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:500;z-index:70;transition:transform .4s cubic-bezier(.16,1,.3,1),visibility .4s;display:flex;gap:8px;align-items:center;visibility:hidden}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Saman Market home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="var(--accent)"/><path d="M8 19c0-5 3.6-9 8-9s8 4 8 9" fill="none" stroke="var(--accent-ink)" stroke-width="2.6" stroke-linecap="round"/><path d="M16 19v6" stroke="var(--accent-ink)" stroke-width="2.6" stroke-linecap="round"/></svg>
+      Saman Market
+    </a>
+    <nav class="nav-links"><a href="#shop">Shop</a><a href="#delivery">Delivery</a><a href="#reviews">Reviews</a></nav>
+    <label class="nav-search"><i class="ti ti-search"></i><input id="q" type="search" placeholder="Search fans, storage, chargers" aria-label="Search products"></label>
+    <button class="icon-btn" id="openCart" aria-label="Open bag"><i class="ti ti-shopping-bag"></i><span class="count" id="count">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="reveal">
+      <h1>Useful things for island homes, <em>delivered islandwide.</em></h1>
+      <p>Fans, storage, kitchen and tech essentials. Clear TT$ prices, pay your way, tracked to your door.</p>
+      <div class="hero-ctas"><a class="btn btn-primary" href="#shop">Shop now <i class="ti ti-arrow-right"></i></a><a class="btn btn-ghost" href="#delivery">How delivery works</a></div>
+    </div>
+    <div class="hero-art reveal">
+      <figure class="tall"><img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=900&q=75&auto=format&fit=crop" alt="A delivery box being handed over at the door" fetchpriority="high"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1601084195907-44baaa49dabd?w=600&q=70&auto=format&fit=crop" alt="Metal desk fan in a sunlit room"></figure>
+      <div class="tile"><i class="ti ti-truck-delivery" style="font-size:34px"></i><strong>TT$500+</strong><span>orders ship free anywhere in Trinidad</span></div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="wrap">
+      <div class="item"><i class="ti ti-truck-delivery"></i><div>Islandwide delivery<small>Next day in most areas</small></div></div>
+      <div class="item"><i class="ti ti-credit-card"></i><div>Card or online banking<small>Secure WiPay checkout</small></div></div>
+      <div class="item"><i class="ti ti-cash"></i><div>Cash on delivery<small>Pay when it arrives</small></div></div>
+      <div class="item"><i class="ti ti-refresh"></i><div>7-day returns<small>Unused, in the box</small></div></div>
+    </div>
+  </div>
+
+  <section id="shop">
+    <div class="wrap">
+      <h2 class="h2 reveal">Shop the essentials</h2>
+      <div class="shop-bar" role="toolbar" aria-label="Filter products">
+        <button class="chip" aria-pressed="true" data-cat="all">All</button>
+        <button class="chip" aria-pressed="false" data-cat="Home & Kitchen">Home & Kitchen</button>
+        <button class="chip" aria-pressed="false" data-cat="Storage">Storage</button>
+        <button class="chip" aria-pressed="false" data-cat="Electronics">Electronics</button>
+        <select id="sort" aria-label="Sort products"><option value="pop">Most popular</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option></select>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section id="delivery" style="padding-top:0">
+    <div class="wrap">
+      <h2 class="h2 reveal">Checkout that works the way Trinbagonians pay</h2>
+      <div class="bento">
+        <div class="b b-pay reveal">
+          <h3>Three ways to pay, zero guesswork</h3>
+          <p>Every price is in TT dollars. What you see in the bag is what you pay.</p>
+          <div class="pay-opts">
+            <div><i class="ti ti-credit-card"></i>Visa or Mastercard through WiPay</div>
+            <div><i class="ti ti-building-bank"></i>Online banking with RBC, Republic or First Citizens</div>
+            <div><i class="ti ti-cash"></i>Cash on delivery for orders under TT$1,000</div>
+          </div>
+        </div>
+        <div class="b b-photo reveal">
+          <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=1000&q=70&auto=format&fit=crop" alt="Stacked parcels ready for delivery">
+          <div class="cap"><h3>Packed the same day</h3><p>Order before 2pm and it leaves our warehouse today.</p></div>
+        </div>
+        <div class="b b-zone reveal">
+          <h3>What will delivery cost me?</h3>
+          <div class="zone-ui">
+            <div><label for="zone">Your area</label>
+              <select id="zone">
+                <option value="35|Next working day">Port of Spain and environs</option>
+                <option value="35|Next working day">East-West corridor</option>
+                <option value="45|1 to 2 working days">Central (Chaguanas, Couva)</option>
+                <option value="55|1 to 2 working days">South (San Fernando, Point)</option>
+                <option value="65|2 to 3 working days">Deep south and east coast</option>
+                <option value="90|3 to 4 working days">Tobago</option>
+              </select></div>
+            <div class="zone-out" id="zoneOut"></div>
+          </div>
+        </div>
+        <div class="b b-wa reveal">
+          <i class="ti ti-brand-whatsapp"></i>
+          <h3 style="margin-top:14px">Updates on WhatsApp</h3>
+          <p>Get a message when it's packed, out for delivery and dropped off.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" style="padding-top:0">
+    <div class="wrap review reveal">
+      <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=300&h=300&q=70&auto=format&fit=crop&crop=faces" alt="Customer portrait">
+      <div>
+        <blockquote>“Ordered the fan and the storage boxes at lunch, had them in Arima the next morning. Paid cash at the door.”</blockquote>
+        <cite>Renelle Baptiste, Arima customer (sample review)</cite>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="final reveal">
+        <div><h2 class="h2">First to know about new arrivals</h2><p>One WhatsApp message when new stock lands. No spam, leave any time.</p></div>
+        <div>
+          <form id="news" novalidate><input id="newsIn" type="tel" placeholder="WhatsApp number, e.g. 868 555 0142" aria-label="WhatsApp number"><button class="btn btn-primary" type="submit">Notify me</button></form>
+          <div class="note" id="newsNote"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>Saman Market, Trinidad and Tobago</span><a class="demo-tag" href="https://wa.me/18682591409" target="_blank" rel="noopener">Concept build by Portside Digital <i class="ti ti-arrow-up-right"></i></a></div></footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Your bag">
+  <div class="drawer-h"><h3>Your bag</h3><button class="icon-btn" data-close aria-label="Close bag"><i class="ti ti-x"></i></button></div>
+  <div class="lines" id="lines"></div>
+  <div class="drawer-f" id="drawerF"></div>
+</aside>
+<div class="modal" id="pdModal"><div class="box" style="position:relative"><button class="icon-btn close" data-close aria-label="Close"><i class="ti ti-x"></i></button><div id="pd"></div></div></div>
+<div class="modal" id="coModal"><div class="box" style="width:min(620px,100%)"><div class="co" id="co"></div></div></div>
+<div class="toast" id="toast"><i class="ti ti-check"></i><span></span></div>
+
+<script>
+const U=id=>`https://images.unsplash.com/${id}?w=700&q=70&auto=format&fit=crop`;
+const P=[
+ {id:1,n:'Rechargeable UV Mosquito Lamp',c:'Home & Kitchen',p:50,was:75,img:'photo-1492201525730-cfe83d133645',s:12,pop:9,f:['365nm UV light with shock net','USB rechargeable, 8 to 10 hour run time','Doubles as a soft night light']},
+ {id:2,n:'Foldable Storage Box with Wheels',c:'Storage',p:80,img:'photo-1600725935160-f67ee4f6084a',s:30,pop:8,f:['Stackable, front and side doors','Folds flat when empty','Price is per box']},
+ {id:3,n:'4G Dual-Lens Dashcam with GPS',c:'Electronics',p:749,img:'photo-1765959106936-851735565c12',s:4,pop:7,f:['Live view from your phone over 4G','SOS button and GPS tracking','1 year warranty']},
+ {id:4,n:'Portable USB Smoothie Blender',c:'Home & Kitchen',p:145,img:'photo-1573613441974-e89ab51c7bd7',s:18,pop:10,f:['Leakproof lid, drink from the jar','USB-C rechargeable','Blends ice and frozen fruit']},
+ {id:5,n:'240W Fast Charger with Phone Stand',c:'Electronics',p:120,img:'photo-1770417999831-1c070eb628e6',s:25,pop:6,f:['USB-C and Lightning ends','Folding stand built in','PD 3.1 fast charging']},
+ {id:6,n:'Quiet Portable Air Cooling Fan',c:'Home & Kitchen',p:165,was:199,img:'photo-1565151443833-29bf2ba5dd8d',s:3,pop:10,f:['DC motor, near silent','Three speeds','Bedroom and desk size']},
+ {id:7,n:'Collapsible Storage Box, 60 inch',c:'Storage',p:60,img:'photo-1609143739217-01b60dad1c67',s:40,pop:5,f:['High capacity, stackable','Universal wheels','Price is per box']},
+ {id:8,n:'Mini 4K Home Projector',c:'Electronics',p:899,img:'photo-1535016120720-40c646be5580',s:6,pop:8,f:['Up to 300 inch picture','Android apps built in','Bluetooth and HDMI']},
+ {id:9,n:'Waterproof Bluetooth Speaker',c:'Electronics',p:420,img:'photo-1589003077984-894e133dabab',s:9,pop:7,f:['IPX7 waterproof, beach ready','Bass boost and party pairing','USB-C charging']},
+ {id:10,n:'UV Toothbrush Sanitizer',c:'Home & Kitchen',p:95,img:'photo-1549924327-093737b3bb46',s:20,pop:4,f:['Holds four brushes','UV clean cycle','Wall mount, no drilling']},
+ {id:11,n:'Table-Top Ice Cube Maker',c:'Home & Kitchen',p:1150,img:'photo-1578323851363-cf6a1a6afbb6',s:2,pop:9,f:['First batch in under 10 minutes','No plumbing needed','Ideal for limes and parties']},
+ {id:12,n:'Sensor Night Light, RGB',c:'Home & Kitchen',p:70,img:'photo-1677593040114-42da5c510595',s:22,pop:5,f:['Motion sensor, auto off','Eight colours','Waterproof for bathrooms']},
+];
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const tt=n=>'TT$'+n.toLocaleString('en-TT');
+let cat='all', sort='pop', q='';
+let cart={}; try{cart=JSON.parse(localStorage.getItem('saman-cart')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('saman-cart',JSON.stringify(cart))}catch(e){}};
+
+function render(){
+  let list=P.filter(p=>(cat==='all'||p.c===cat)&&p.n.toLowerCase().includes(q.toLowerCase()));
+  list.sort((a,b)=>sort==='lo'?a.p-b.p:sort==='hi'?b.p-a.p:b.pop-a.pop);
+  $('#grid').innerHTML=list.length?list.map(p=>`<article class="card">
+    <div class="ph" data-open="${p.id}"><img loading="lazy" src="${U(p.img)}" alt="${p.n}"></div>
+    <div class="body"><h3 data-open="${p.id}">${p.n}</h3><div class="meta">${p.c}</div>
+    <span class="stock ${p.s<=4?'low':''}">${p.s<=4?'Only '+p.s+' left':'In stock'}</span>
+    <div class="row"><span class="price">${tt(p.p)}${p.was?`<s>${tt(p.was)}</s>`:''}</span><button class="add" data-add="${p.id}" aria-label="Add ${p.n} to bag"><i class="ti ti-plus"></i></button></div></div></article>`).join('')
+    :`<div class="empty"><i class="ti ti-search-off"></i>Nothing matches “${q}”. Try “fan” or “storage”.</div>`;
+}
+function count(){const n=Object.values(cart).reduce((a,b)=>a+b,0);const c=$('#count');c.textContent=n;c.classList.toggle('on',n>0)}
+function subtotal(){return Object.entries(cart).reduce((s,[id,qt])=>s+P.find(p=>p.id==id).p*qt,0)}
+function add(id,n=1){const p=P.find(x=>x.id==id);cart[id]=Math.min((cart[id]||0)+n,p.s);save();count();drawer();toast(p.n+' added to bag')}
+function drawer(){
+  const ids=Object.keys(cart);
+  $('#lines').innerHTML=ids.length?ids.map(id=>{const p=P.find(x=>x.id==id);return `<div class="line"><img src="${U(p.img)}" alt=""><div><h4>${p.n}</h4><div class="qty"><button data-q="${id}|-1" aria-label="Less">-</button><span>${cart[id]}</span><button data-q="${id}|1" aria-label="More">+</button></div></div><b>${tt(p.p*cart[id])}</b></div>`}).join('')
+   :`<div class="empty"><i class="ti ti-shopping-bag"></i>Your bag is empty.<br><br><button class="btn btn-ghost" data-close>Keep shopping</button></div>`;
+  const s=subtotal(), left=500-s;
+  $('#drawerF').innerHTML=ids.length?`<div class="free-bar">${left>0?`Add <b>${tt(left)}</b> more for free delivery in Trinidad`:'<b>Free delivery</b> unlocked'}</div><div class="sum total"><span>Subtotal</span><span>${tt(s)}</span></div><button class="btn btn-primary" id="toCo" style="justify-content:center">Checkout <i class="ti ti-lock"></i></button>`:'';
+}
+let tt_;function toast(m){const t=$('#toast');t.querySelector('span').textContent=m;t.classList.add('on');clearTimeout(tt_);tt_=setTimeout(()=>t.classList.remove('on'),2200)}
+function open(el){$('#scrim').classList.add('on');el.classList.add('on')}
+function closeAll(){$$('.drawer,.modal,.scrim').forEach(e=>e.classList.remove('on'))}
+function pd(id){const p=P.find(x=>x.id==id);$('#pd').innerHTML=`<div class="pd"><img src="${U(p.img)}" alt="${p.n}"><div class="in"><span class="meta" style="color:var(--muted)">${p.c}</span><h3>${p.n}</h3><span class="price" style="font-size:28px">${tt(p.p)}${p.was?`<s>${tt(p.was)}</s>`:''}</span><ul>${p.f.map(x=>`<li>${x}</li>`).join('')}</ul><span class="stock ${p.s<=4?'low':''}">${p.s<=4?'Only '+p.s+' left':'In stock, ships today'}</span><div style="display:flex;gap:10px;margin-top:auto"><div class="qty"><button id="pdm">-</button><span id="pdq">1</span><button id="pdp">+</button></div><button class="btn btn-primary" id="pdAdd" style="flex:1;justify-content:center">Add to bag</button></div></div></div>`;
+  let n=1;$('#pdm').onclick=()=>{n=Math.max(1,n-1);$('#pdq').textContent=n};$('#pdp').onclick=()=>{n=Math.min(p.s,n+1);$('#pdq').textContent=n};$('#pdAdd').onclick=()=>{add(p.id,n);closeAll()};open($('#pdModal'))}
+
+/* checkout */
+let step=0, order={};
+function co(){
+  const s=subtotal();const fee=order.zoneFee??35;const ship=s>=500&&order.zoneName!=='Tobago'?0:fee;
+  const bar=`<div class="steps">${[0,1,2].map(i=>`<span class="${i<=step?'on':''}"></span>`).join('')}</div>`;
+  let h='';
+  if(step===0)h=`<h3 class="h2" style="font-size:28px">Your details</h3>${bar}
+   <div class="field"><label for="cn">Full name</label><input id="cn" value="${order.name||''}" autocomplete="name"><span class="err"></span></div>
+   <div class="two"><div class="field"><label for="cp">WhatsApp number</label><input id="cp" type="tel" value="${order.phone||''}" placeholder="868 555 0142"><span class="err"></span></div>
+   <div class="field"><label for="ce">Email (optional)</label><input id="ce" type="email" value="${order.email||''}"><span class="err"></span></div></div>`;
+  if(step===1)h=`<h3 class="h2" style="font-size:28px">Delivery</h3>${bar}
+   <div class="field"><label for="ca">Street address</label><input id="ca" value="${order.addr||''}" placeholder="12 Saman Avenue"><span class="err"></span></div>
+   <div class="field"><label for="cz">Area</label><select id="cz">${[...$('#zone').options].map(o=>`<option value="${o.value}|${o.text}" ${order.zoneName===o.text?'selected':''}>${o.text}</option>`).join('')}</select></div>`;
+  if(step===2)h=`<h3 class="h2" style="font-size:28px">Payment</h3>${bar}
+   <label class="opt"><input type="radio" name="pay" value="Card (WiPay)" checked><div><b>Card via WiPay</b><small>Visa or Mastercard, paid now</small></div></label>
+   <label class="opt"><input type="radio" name="pay" value="Online banking"><div><b>Online banking</b><small>We send account details on WhatsApp</small></div></label>
+   <label class="opt"><input type="radio" name="pay" value="Cash on delivery" ${s>=1000?'disabled':''}><div><b>Cash on delivery</b><small>${s>=1000?'Available on orders under TT$1,000':'Pay the driver when it arrives'}</small></div></label>
+   <div class="sum" style="margin-top:14px"><span>Subtotal</span><span>${tt(s)}</span></div><div class="sum"><span>Delivery</span><span>${ship?tt(ship):'Free'}</span></div><div class="sum total" style="margin-top:6px"><span>Total</span><span>${tt(s+ship)}</span></div>`;
+  if(step===3){const no='SM-'+(48210+Math.floor(Math.random()*900));h=`<div class="done-ui"><i class="ti ti-circle-check"></i><h3 class="h2" style="font-size:30px;margin-top:10px">Order ${no} confirmed</h3><p class="sub" style="margin:12px auto">Thanks ${order.name.split(' ')[0]}. We'll message ${order.phone} when it's packed. Paying by ${order.pay.toLowerCase()}.</p><p class="sub" style="margin:0 auto 20px">Arriving: ${order.eta}</p><button class="btn btn-primary" data-close>Back to shop</button></div>`;cart={};save();count();drawer()}
+  if(step<3)h+=`<div class="co-actions"><button class="btn btn-ghost" id="coBack">${step?'Back':'Cancel'}</button><button class="btn btn-primary" id="coNext">${step===2?'Place order':'Continue'} <i class="ti ti-arrow-right"></i></button></div>`;
+  $('#co').innerHTML=h;
+  const b=$('#coBack');if(b)b.onclick=()=>{if(!step)closeAll();else{step--;co()}};
+  const nx=$('#coNext');if(nx)nx.onclick=next;
+}
+function err(id,m){const f=$('#'+id).closest('.field');f.querySelector('.err').textContent=m;return !m}
+function next(){
+  if(step===0){const n=$('#cn').value.trim(),p=$('#cp').value.replace(/\D/g,''),e=$('#ce').value.trim();
+    const ok=[err('cn',n.length<2?'Please add your name':''),err('cp',p.length<7?'Enter a valid WhatsApp number':''),err('ce',e&&!/^\S+@\S+\.\S+$/.test(e)?'That email looks off':'')].every(Boolean);
+    if(!ok)return;Object.assign(order,{name:n,phone:$('#cp').value,email:e})}
+  if(step===1){const a=$('#ca').value.trim();if(!err('ca',a.length<4?'Add a street address so the driver can find you':''))return;
+    const [fee,eta,name]=$('#cz').value.split('|');Object.assign(order,{addr:a,zoneFee:+fee,eta,zoneName:name})}
+  if(step===2)order.pay=document.querySelector('input[name=pay]:checked').value;
+  step++;co();
+}
+
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-add],[data-open],[data-q],[data-close],#toCo,#openCart,.chip');if(!t){if(e.target.id==='scrim')closeAll();return}
+  if(t.dataset.add){add(+t.dataset.add);t.classList.add('done');t.innerHTML='<i class="ti ti-check"></i>';setTimeout(()=>{t.classList.remove('done');t.innerHTML='<i class="ti ti-plus"></i>'},1200)}
+  else if(t.dataset.open)pd(+t.dataset.open);
+  else if(t.dataset.q){const [id,d]=t.dataset.q.split('|');const p=P.find(x=>x.id==id);cart[id]=Math.min((cart[id]||0)+ +d,p.s);if(cart[id]<=0)delete cart[id];save();count();drawer()}
+  else if(t.hasAttribute('data-close'))closeAll();
+  else if(t.id==='openCart'){drawer();open($('#drawer'))}
+  else if(t.id==='toCo'){closeAll();step=0;co();open($('#coModal'))}
+  else if(t.classList.contains('chip')){$$('.chip').forEach(c=>c.setAttribute('aria-pressed',c===t));cat=t.dataset.cat;render()}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll()});
+$('#sort').onchange=e=>{sort=e.target.value;render()};
+$('#q').oninput=e=>{q=e.target.value;render();if(q)document.getElementById('shop').scrollIntoView({block:'start'})};
+const zo=()=>{const [f,eta]=$('#zone').value.split('|');$('#zoneOut').innerHTML=`<strong>${tt(+f)}</strong>${eta}. Free over TT$500${$('#zone').selectedIndex===5?' (Tobago excluded)':''}.`};$('#zone').onchange=zo;zo();
+$('#news').onsubmit=e=>{e.preventDefault();const v=$('#newsIn').value.replace(/\D/g,'');$('#newsNote').textContent=v.length<7?'Enter a WhatsApp number with at least 7 digits.':'Done. You will get a message when new stock lands.'};
+render();count();drawer();
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.12});
+$$('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
